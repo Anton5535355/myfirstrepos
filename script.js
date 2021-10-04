@@ -33,7 +33,7 @@ let service2 = prompt('Какой дополнительный тип услуг
     console.log(service2);
 let servicePrice2 = +prompt('Сколько это будет стоить?');
     console.log(servicePrice2);
-fullPrice = (screenPrice + servicePrice1 + servicePrice2);
+fullPrice = (Math.ceil(screenPrice + servicePrice1 + servicePrice2));
     console.log(fullPrice);
 
 let servicePercentPrice = (screenPrice + servicePrice1 + servicePrice2 - 10000);
@@ -42,10 +42,10 @@ let servicePercentPrice = (screenPrice + servicePrice1 + servicePrice2 - 10000);
 if (fullPrice > 30000) {
     console.log('Даем скидку в 10%')
 }
-if (15000 < fullPrice < 30000) {
+if (15000 < fullPrice && fullPrice < 30000) {
     console.log('Даем скидку в 5%')
 }
-if (15000 > fullPrice > 0) {
+if (15000 > fullPrice && fullPrice > 0) {
     console.log('Скидка не предусмотрена')
 }
 if (fullPrice < 0) {
