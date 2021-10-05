@@ -36,7 +36,7 @@ let servicePrice2 = +prompt('Сколько это будет стоить?');
 fullPrice = (screenPrice + servicePrice1 + servicePrice2);
     console.log(fullPrice);
 
-let servicePercentPrice = Math.ceil(screenPrice + servicePrice1 + servicePrice2 - 10000);
+let servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback/100)));
     console.log(servicePercentPrice);
 
 if (fullPrice >= 30000) {
