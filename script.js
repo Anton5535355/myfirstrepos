@@ -39,10 +39,10 @@ fullPrice = (screenPrice + servicePrice1 + servicePrice2);
 let servicePercentPrice = Math.ceil(screenPrice + servicePrice1 + servicePrice2 - 10000);
     console.log(servicePercentPrice);
 
-if (fullPrice > 30000) {
+if (fullPrice >= 30000) {
     console.log('Даем скидку в 10%')
 }
-if (15000 < fullPrice && fullPrice < 30000) {
+if (15000 <= fullPrice && fullPrice < 30000) {
     console.log('Даем скидку в 5%')
 }
 if (15000 > fullPrice && fullPrice >= 0) {
