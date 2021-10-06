@@ -44,15 +44,12 @@ const getAllServicePrices = function() {
 }
 
 
-function getFullPrice(fullPrice) {
-    function fullPrice(scP, aSP) {
-        console.log(scP + aSP);
-    }
-    fullPrice(screenPrice, allServicePrices);
+function getFullPrice() {
+    return screenPrice + allServicePrices;
 }
 
 
-const getTitle = function() {
+const getTitle = function(title) {
     if (!title) return title;
 
     return title[0].toUpperCase() + title.slice(1);
@@ -60,7 +57,7 @@ const getTitle = function() {
 
 
 const getServicePercentPrices = function() {
-    return fullPrice - (fullPrice * (rollback/100))
+    return Math.ceil(fullPrice - (fullPrice * (rollback/100)))
 }
 
 
@@ -71,18 +68,15 @@ showTypeOf(adaptive);
 getAllServicePrices()
 let allServicePrices = getAllServicePrices();
 getFullPrice();
-fullPrice = screenPrice + allServicePrices;
-getTitle();
+fullPrice = getFullPrice();
+getTitle()
+title = getTitle()
 getServicePercentPrices()
 servicePercentPrice = getServicePercentPrices();
 
 
-console.log(typeof title);
-console.log(typeof fullPrice);
-console.log(typeof adaptive);
 console.log(screens.length);
 console.log('Стоимость верстки экранов' + " " + screenPrice + " " + 'рублей');
-console.log(servicePercentPrice);
 console.log(getRollbackMessage(fullPrice));
 console.log(getAllServicePrices());
 console.log(getTitle());
