@@ -1,4 +1,7 @@
 'use strict';
+alert("Привет, куратор!");
+console.log("Привет, куратор!");
+
 
 let title = prompt('Как называется ваш проект?', "project");
 let screens = prompt('Какие типы экранов нужно разработать?', "ПРОСТЫЕ, СЛОЖНЫЕ, ИНТЕРАКТИВНЫЕ");
@@ -6,20 +9,21 @@ let screenPrice = 290;
 let rollback = 99;
 let fullPrice = 10000;
 let adaptive = true;
+screenPrice = +prompt('Сколько будет стоить данная работа?', "290");
+adaptive = confirm('Нужен ли адаптив на сайте?');
 let service1 = prompt('Какой дополнительный тип услуги нужен?');
 let servicePrice1 = +prompt('Сколько это будет стоить?');
 let service2 = prompt('Какой дополнительный тип услуги нужен?');
 let servicePrice2 = +prompt('Сколько это будет стоить?');
-let servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback/100)));
-let allServicePrices = getAllServicePrices()
-screenPrice = +prompt('Сколько будет стоить данная работа?', "290");
-adaptive = confirm('Нужен ли адаптив на сайте?');
 fullPrice = (screenPrice + servicePrice1 + servicePrice2);
-fullPrice = screenPrice + allServicePrices;
-servicePercentPrice = getServicePercentPrices();
+let servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback/100)));
 
+const showTypeOf = function(a) {
+    console.log(a, typeof a)
+}
 
 const getRollbackMessage = function(price) {
+
     if (price >= 30000) {
         return 'Даем скидку в 10%'
     }
@@ -60,35 +64,26 @@ const getServicePercentPrices = function() {
 }
 
 
-const showTypeOf = function(a) {
-    console.log(a, typeof a)
-}
-
-
 
 showTypeOf(title);
-showTypeOf(fullPrice);
+showTypeOf(screenPrice);
 showTypeOf(adaptive);
-getAllServicePrices();
+getAllServicePrices()
+let allServicePrices = getAllServicePrices();
 getFullPrice();
-getTitle()
+fullPrice = screenPrice + allServicePrices;
+getTitle();
 getServicePercentPrices()
+servicePercentPrice = getServicePercentPrices();
 
 
-
-console.log(service1);
-console.log(servicePrice1);
-console.log(service2);
-console.log(servicePrice2);
-console.log(fullPrice);
-console.log(servicePercentPrice);
-console.log(getRollbackMessage(fullPrice));
+console.log(typeof title);
+console.log(typeof fullPrice);
+console.log(typeof adaptive);
 console.log(screens.length);
 console.log('Стоимость верстки экранов' + " " + screenPrice + " " + 'рублей');
-console.log('Стоимость разработки сайта' + " "  + fullPrice + " " + 'рублей');
-console.log(screens.toLowerCase());
-console.log(screens.toLowerCase().split(" "));
-console.log(fullPrice * (rollback/100));
+console.log(servicePercentPrice);
+console.log(getRollbackMessage(fullPrice));
 console.log(getAllServicePrices());
 console.log(getTitle());
 console.log(getServicePercentPrices());
