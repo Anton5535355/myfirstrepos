@@ -3,7 +3,7 @@ alert("Привет, куратор!");
 console.log("Привет, куратор!");
 
 
-let title = 'Мое второе дз';
+let title = 'project';
 let screens = 'ПРОСТЫЕ, СЛОЖНЫЕ, ИНТЕРАКТИВНЫЕ';
 let screenPrice = 290;
 let rollback = 99;
@@ -21,7 +21,7 @@ console.log(screens.toLowerCase());
 console.log(screens.toLowerCase().split(" "));
 console.log(fullPrice * (rollback/100));
 
-title = prompt('Как называется ваш проект?', "Мое второе дз");
+title = prompt('Как называется ваш проект?', "project");
 screens = prompt('Какие типы экранов нужно разработать?', "ПРОСТЫЕ, СЛОЖНЫЕ, ИНТЕРАКТИВНЫЕ");
 screenPrice = +prompt('Сколько будет стоить данная работа?', "290");
 adaptive = confirm('Нужен ли адаптив на сайте?');
@@ -51,3 +51,31 @@ if (15000 > fullPrice && fullPrice >= 0) {
 if (fullPrice < 0) {
     console.log('Что то пошло не так')
 }
+
+
+let allServicePrices = servicePrice1 + servicePrice2;
+
+const getAllServicePrices = function(allServicePrices) {
+    return allServicePrices
+}
+
+getAllServicePrices()
+allServicePrices = getAllServicePrices(allServicePrices);
+
+fullPrice = screenPrice + allServicePrices;
+
+function getFullPrice(fullPrice) {
+    function fullPrice(scP, aSP) {
+        console.log(scP + aSP);
+    }
+    fullPrice(screenPrice, allServicePrices);
+}
+getFullPrice()
+
+const getTitle = function(title) {
+    return title.ucFirst("project") == "Project"
+}
+getTitle()
+
+console.log(allServicePrices);
+
