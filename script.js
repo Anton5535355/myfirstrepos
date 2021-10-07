@@ -49,8 +49,8 @@ function getFullPrice() {
 }
 
 
-const getTitle = function(title) {
-    if (!title) return title;
+const getTitle = function(a) {
+    if (!title) return a;
 
     return title[0].toUpperCase() + title.slice(1);
 }
@@ -77,8 +77,9 @@ servicePercentPrice = getServicePercentPrices();
 
 console.log(screens.length);
 console.log('Стоимость верстки экранов' + " " + screenPrice + " " + 'рублей');
+console.log(screens.toLocaleLowerCase());
+console.log(screens.split(" "));
 console.log(getRollbackMessage(fullPrice));
 console.log(getAllServicePrices());
 console.log(getTitle());
 console.log(getServicePercentPrices());
-console.log(screens.split(" "));
